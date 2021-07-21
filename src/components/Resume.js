@@ -69,7 +69,7 @@ export default function Resume(props){
                         <div className="progress-wrap ">
                           <h3>{item.skillname}</h3>
                           <div className="progress">
-                            <div className="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style={{width:'90%'}}>
+                            <div className="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style={{width:item.percent+"%"}}>
                               <span>{item.percent}%</span>
                             </div>
                           </div>
