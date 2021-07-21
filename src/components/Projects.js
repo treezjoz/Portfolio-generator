@@ -18,7 +18,7 @@ export default function Projects(props){
                     <div className="project img  d-flex justify-content-center align-items-center" style={{ backgroundImage: `url(${item.imgurl})` }}>
                       <div className="overlay"></div>
                         <div className="text text-center p-4">
-                          <h3><a href={item.link}>{item.name}</a></h3>
+                          <h3><a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a></h3>
                           <span>{item.description}</span>
                         </div>
                     </div>
