@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import Portfolio from './Portfolio'
+import Home from './Home';
+import Form from './Form';
 
 function App() {
+  const PrivateRoute = ({ component: Component, ...rest }) =>
+    (
+      <Route
+        {...rest}
+        render={props =>
+          sessionStorage.getItem('resumeData') ?
+          (<Component {...props} />) :
+          (<Redirect to={{pathname: "/"}}/>)}/>
+    );
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/form" component={Form} />
+          <PrivateRoute path="/portfolio" component={Portfolio} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
