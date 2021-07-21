@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+.tm-main-container {
+  height: 100vh;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  background-image: url('bghome.jpg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.tm-top-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.buttonHome {
+  display: inline-block;
+  border-radius: 6px;
+  background-color:  #9b2335;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonHome span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonHome span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonHome:hover span {
+  padding-right: 25px;
+}
+
+.buttonHome:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.tm-nav {
+  margin: 30px;
+}
+
+.tm-bg-dark {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.tm-site-header-box {
+  display: inline-block;
+  padding: 40px 80px 40px 40px;
+  margin: 40px 40px 100px;
+}
+
+.tm-site-title {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: 'Tourney', cursive;
+}
+
+.tm-site-subtitle {
+  color: #cdffd0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.tm-content {
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.tm-section {
+  margin-right: 75px;
+  max-width: 100%;
+}
+
+.tm-section-title {
+  font-size: 2.4rem;
+  font-family: 'Satisfy',cursive;
+  margin-left: 40px;
+  color: #ffffff;
+}
+
+.tm-textbox {
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #c5c7c6;
+  line-height: 1.6;
+}
+
+.tm-section-0 {
+  margin-top: 50px;
+  max-width: 575px;
+}
+
+@media (max-width: 767px) {
+  .tm-site-title {
+    font-size: 3rem;
+  }
+  .tm-top-container {
+    flex-direction: column-reverse;
+  }
+
+  .tm-site-header-box {
+    margin-bottom: 0;
+  }
+
+  .tm-nav {
+    align-self: flex-end;
+    margin-right: 40px;
+  }
+
+  .tm-section {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
+
+  .tm-section-title {
+    margin-left: 0;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tm-section-title {
+    font-size: 2.4rem;
+  }
+}

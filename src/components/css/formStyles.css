@@ -1,0 +1,96 @@
+.FormPage form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+.FormPage h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+  font-size: 50px;
+  color: #00e64d;
+}
+
+.FormPage h2{
+  color: white;
+  font-weight: bold;
+}
+
+.FormPage button[type="button"] {
+  background: black;
+  border: 1px solid white;
+}
+
+.FormPage p {
+  color: #bf1650;
+  text-align: center;
+}
+
+.FormPage input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.FormPage label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.FormPage button,
+.FormPage input[type="submit"] {
+  background: #00b37d;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+.FormPage input[type="submit"]:hover {
+  background: #006647;
+}
+
+.FormPage input[type="button"]:active,
+.FormPage input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+.FormPage input:disabled {
+  opacity: 0.4;
+}
+
+.FormPage input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+.FormPage input[type="button"],
+.FormPage input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.FormPage{
+  background: linear-gradient(to right, #003366 0%, #0066cc 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
