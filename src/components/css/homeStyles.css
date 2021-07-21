@@ -34,6 +34,7 @@
   display: inline-block;
   position: relative;
   transition: 0.5s;
+  color:white;
 }
 
 .buttonHome span:after {
@@ -47,6 +48,7 @@
 
 .buttonHome:hover span {
   padding-right: 25px;
+  color: white;
 }
 
 .buttonHome:hover span:after {
