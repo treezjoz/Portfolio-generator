@@ -215,9 +215,7 @@ function Form(){
       <label>Your photo URL *</label> <input {...register('photo', { required: true })} />
           {errors.photo && <span>This field is required</span>}
 
-      <label>LinkedIn URL *</label> <input {...register('linkedin', { required: true })} />
-          {errors.linkedin && <span>This field is required</span>}
-
+      <label>LinkedIn URL</label> <input {...register('linkedin')} />
       <label>Github URL</label> <input {...register('github')} />
       <label>Instagram URL</label> <input {...register('instagram')} />
       <br/>
