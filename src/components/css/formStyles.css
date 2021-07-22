@@ -1,31 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .FormPage form {
   max-width: 800px;
   margin: 0 auto;
+  padding-top: 80px;
   padding-bottom: 120px;
 }
 
 .FormPage h1 {
   text-align: center;
-  padding-bottom: 10px;
-  padding-top: 20px;
-  border-bottom: 1px solid rgb(79, 98, 148);
-  font-size: 50px;
+  padding-bottom: 40px;
+  padding-top: 50px;
+  border-bottom: 1px solid #00e64d;
+  font-size: 40px;
   color: #00e64d;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1a1a1a;
 }
 
 .FormPage h2{
-  color: white;
+  color: #00e64d;
   font-weight: bold;
 }
 
 .FormPage button[type="button"] {
   background: black;
-  border: 1px solid white;
-}
-
-.FormPage p {
-  color: #bf1650;
+  border: 1px solid #00e64d;
+  color:#00e64d;
+  font-weight: bold;
+  border-radius: 20%;
   text-align: center;
+  margin-top: 40px;
+  padding: 20px;
 }
 
 .FormPage input {
@@ -45,27 +50,26 @@
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: white;
+  color: #00e64d;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: bold;
   text-transform: capitalize;
 }
 
-.FormPage button,
 .FormPage input[type="submit"] {
-  background: #00b37d;
-  color: white;
+  background: #00e64d;
+  color: #1a1a1a;
   text-transform: uppercase;
   border: none;
   margin-top: 40px;
   padding: 20px;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: bold;
   letter-spacing: 10px;
 }
 
 .FormPage input[type="submit"]:hover {
-  background: #006647;
+  opacity: 0.7;
 }
 
 .FormPage input[type="button"]:active,
@@ -90,7 +94,7 @@
 }
 
 .FormPage{
-  background: linear-gradient(to bottom left, #006666 0%, #000000 100%);
+  background: #1a1a1a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
