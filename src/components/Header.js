@@ -2,14 +2,32 @@ import React from 'react';
 
 export default function Header(props){
   const roles=props.resumeData.roles.split(',');
-  const handleThemeChange = theme => {
-    const style = document.createElement("link");
-    style.href = "css/style"+theme+".css";
-    style.rel = "stylesheet";
-    style.async = true;
-    console.log(style);
-    document.head.appendChild(style);
-  };
+
+  let switches = document.getElementsByClassName('switch');
+  let style = localStorage.getItem('style');
+
+  if (style == null) { setTheme('light'); }
+  else { setTheme(style); }
+
+  for (let i of switches) {
+    i.addEventListener('click', function () {
+      let theme = this.dataset.theme;
+      console.log(theme);
+      setTheme(theme);
+  });}
+
+  function setTheme(theme) {
+  if (theme == 'blue') {
+    document.getElementById('switcher-id').href = './css/blue.css';
+  } else if (theme == 'green') {
+    document.getElementById('switcher-id').href = './css/green.css';
+  } else if (theme == 'red') {
+    document.getElementById('switcher-id').href = './css/red.css';
+  } else if (theme == 'pink') {
+    document.getElementById('switcher-id').href = './css/pink.css';
+  }
+  localStorage.setItem('style', theme);
+  }
 
   return(
     <div id="home-section">
@@ -27,11 +45,11 @@ export default function Header(props){
             <li className="nav-item"><a href="#projects-section" className="nav-link"><span>Projects</span></a></li>
             <li className="nav-item"><a href="#connect-section" className="nav-link"><span>Contact</span></a></li>
             <li>
-            <div className="switchEnclose">
-              <button className="themeButton theme1" onClick={() => handleThemeChange(1)}></button>
-              <button className="themeButton theme2" onClick={() => handleThemeChange(2)}></button>
-              <button className="themeButton theme3" onClick={() => handleThemeChange(3)}></button>
-              <button className="themeButton theme4" onClick={() => handleThemeChange(4)}></button>
+            <div className="theme-switches">
+              <button className="switch" id="switch-1" data-theme="blue"></button>
+              <button className="switch" id="switch-2" data-theme="green"></button>
+              <button className="switch" id="switch-3" data-theme="red"></button>
+              <button className="switch" id="switch-4" data-theme="pink"></button>
             </div>
             </li>
           </ul>
@@ -54,7 +72,7 @@ export default function Header(props){
         </div>
     <div className="mouse">
       <a href="#about-section" className="mouse-icon">
-        <div className="mouse-wheel"><span className="ion-ios-arrow-round-down"></span></div>
+        <div className="mouse-wheel"><span><i class="fa fa-hand-o-down" aria-hidden="true"></i></span></div>
       </a>
     </div>
     </div>
