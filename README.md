@@ -1,1 +1,1 @@
-# A Demo Portfolio Generator Application
+# Portfolio Generator Application
