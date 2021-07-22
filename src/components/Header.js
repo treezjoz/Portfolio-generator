@@ -4,9 +4,9 @@ export default function Header(props){
   const roles=props.resumeData.roles.split(',');
 
   let switches = document.getElementsByClassName('switch');
-  let style = localStorage.getItem('style');
+  let style = sessionStorage.getItem('style');
 
-  if (style == null) { setTheme('blue'); }
+  if (style === null) { setTheme('blue'); }
   else { setTheme(style); }
 
   for (let i of switches) {
@@ -26,7 +26,7 @@ export default function Header(props){
   } else if (theme === 'pink') {
     document.getElementById('switcher-id').href = './css/pink.css';
   }
-  localStorage.setItem('style', theme);
+  sessionStorage.setItem('style', theme);
   }
 
   return(
