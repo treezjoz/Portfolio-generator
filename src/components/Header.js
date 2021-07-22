@@ -6,7 +6,7 @@ export default function Header(props){
   let switches = document.getElementsByClassName('switch');
   let style = localStorage.getItem('style');
 
-  if (style == null) { setTheme('light'); }
+  if (style == null) { setTheme('blue'); }
   else { setTheme(style); }
 
   for (let i of switches) {
