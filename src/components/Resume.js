@@ -11,7 +11,7 @@ export default function Resume(props){
                 <li><a href="#page-1">Education</a></li>
                 <li><a href="#page-2">Experience</a></li>
                 <li><a href="#page-3">Skills</a></li>
-                <li><a href="#page-4">Awards</a></li>
+                <li><a href="#page-4">Achievements</a></li>
               </ul>
             </nav>
           </div>
