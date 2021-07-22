@@ -3,8 +3,6 @@
   height: 100vh;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background-image: url('bghome.jpg');
-  background-repeat: no-repeat;
-  overflow: hidden;
 }
 
 .tm-top-container {
@@ -116,9 +114,24 @@
   max-width: 575px;
 }
 
+@media (max-width: 1050px) {
+  .tm-site-title {
+    font-size: 2.5rem;
+  }
+
+  .tm-main-container{
+    background: linear-gradient(to left, #000000 0%, #003333 100%);
+    overflow: auto;
+}
+
+  .tm-section-title {
+    font-size: 2.4rem;
+  }
+}
+
 @media (max-width: 767px) {
   .tm-site-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
   .tm-top-container {
     flex-direction: column-reverse;
@@ -142,12 +155,21 @@
 
   .tm-section-title {
     margin-left: 0;
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  .tm-textbox {
+    font-size: 0.9rem;
+  }
+
+  .tm-link{
+    font-size: 1.0rem;
   }
 }
 
 @media (max-width: 480px) {
+
   .tm-section-title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
