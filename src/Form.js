@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 function Form(){
   const {
     register,
-    handleSubmit,
+    handleSubmit, formState: { errors }
   } = useForm();
 
   const history = useHistory();
@@ -183,36 +183,45 @@ function Form(){
   return (
     <div className="FormPage">
     <h1>Portfolio Generation Form</h1>
+    <p>(*) marked fields are required</p>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label>First Name</label>
-      <input {...register('firstName', { required: true })} />
-      <label>Last Name</label>
-      <input {...register('lastName', { required: true })} />
-      <label>Your career role 1</label>
-      <input {...register('role1', { required: true })} />
-      <label>Your career role 2</label>
-      <input {...register('role2')} />
-      <label>Career description</label>
-      <input {...register('roleDescription', { required: true })} />
-      <label>About yourself</label>
-      <input {...register('aboutme', { required: true })} />
-      <label>location</label>
-      <input {...register('location', { required: true })} />
-      <label>zipcode</label>
-      <input {...register('zipcode', { required: true })} />
-      <label>email</label>
-      <input {...register('email', { required: true })} />
-      <label>phone</label>
-      <input {...register('phone', { required: true })} />
-      <label>Your photo URL</label>
-      <input {...register('photo', { required: true })} />
-      <label>LinkedIn URL</label>
-      <input {...register('linkedin', { required: true })} />
-      <label>Github URL</label>
-      <input {...register('github', { required: true })} />
-      <label>Instagram URL</label>
-      <input {...register('instagram', { required: true })} />
+      <label>First Name *</label> <input {...register('firstName', { required: true })} />
+          {errors.firstName && <span>This field is required</span>}
+
+      <label>Last Name *</label> <input {...register('lastName', { required: true })} />
+          {errors.lastName && <span>This field is required</span>}
+
+      <label>career roles [Seperate roles with comma] *</label> <input {...register('roles', { required: true })} />
+          {errors.roles && <span>This field is required</span>}
+
+      <label>Career description *</label> <input {...register('roleDescription', { required: true })} />
+          {errors.roleDescription && <span>This field is required</span>}
+
+      <label>About yourself *</label> <input {...register('aboutme', { required: true })} />
+          {errors.aboutme && <span>This field is required</span>}
+
+      <label>location *</label> <input {...register('location', { required: true })} />
+          {errors.location && <span>This field is required</span>}
+
+      <label>zipcode *</label> <input {...register('zipcode', { required: true })} />
+          {errors.zipcode && <span>This field is required</span>}
+
+      <label>email *</label> <input {...register('email', { required: true })} />
+          {errors.email && <span>This field is required</span>}
+
+      <label>phone *</label> <input {...register('phone', { required: true })} />
+          {errors.phone && <span>This field is required</span>}
+
+      <label>Your photo URL *</label> <input {...register('photo', { required: true })} />
+          {errors.photo && <span>This field is required</span>}
+
+      <label>LinkedIn URL *</label> <input {...register('linkedin', { required: true })} />
+          {errors.linkedin && <span>This field is required</span>}
+
+      <label>Github URL</label> <input {...register('github')} />
+      <label>Instagram URL</label> <input {...register('instagram')} />
       <br/>
+
       <h2>Education Details</h2>
       <div>
         {eduInputFields.map((inputField, index) => (
@@ -260,22 +269,22 @@ function Form(){
             <div>
               <button
                 type="button"
-                disabled={eduInputFields.length === 1}
                 onClick={() => handleEduRemoveFields(index)}
               >
-                -
-              </button>
-              <button
-                type="button"
-                onClick={() => handleEduAddFields()}
-              >
-                +
+                Remove Section
               </button>
             </div>
           </Fragment>
         ))}
+        <button
+          type="button"
+          onClick={() => handleEduAddFields()}
+        >
+          Add Section
+        </button>
       </div>
       <br/>
+
       <h2>Work Experience Details</h2>
       <div>
         {workInputFields.map((inputField, index) => (
@@ -323,22 +332,22 @@ function Form(){
             <div>
               <button
                 type="button"
-                disabled={workInputFields.length === 1}
                 onClick={() => handleWorkRemoveFields(index)}
               >
-                -
-              </button>
-              <button
-                type="button"
-                onClick={() => handleWorkAddFields()}
-              >
-                +
+                Remove Section
               </button>
             </div>
           </Fragment>
         ))}
+        <button
+          type="button"
+          onClick={() => handleWorkAddFields()}
+        >
+          Add Section
+        </button>
       </div>
       <br/>
+
       <h2>Skill Set</h2>
       <div>
         {skillInputFields.map((inputField, index) => (
@@ -366,22 +375,22 @@ function Form(){
             <div>
               <button
                 type="button"
-                disabled={skillInputFields.length === 1}
                 onClick={() => handleSkillRemoveFields(index)}
               >
-                -
-              </button>
-              <button
-                type="button"
-                onClick={() => handleSkillAddFields()}
-              >
-                +
+                Remove Section
               </button>
             </div>
           </Fragment>
         ))}
+        <button
+          type="button"
+          onClick={() => handleSkillAddFields()}
+        >
+          Add Section
+        </button>
       </div>
       <br/>
+
       <h2>Project Experience</h2>
       <div>
         {projectInputFields.map((inputField, index) => (
@@ -429,22 +438,22 @@ function Form(){
             <div>
               <button
                 type="button"
-                disabled={projectInputFields.length === 1}
                 onClick={() => handleProjectRemoveFields(index)}
               >
-                -
-              </button>
-              <button
-                type="button"
-                onClick={() => handleProjectAddFields()}
-              >
-                +
+                Remove Section
               </button>
             </div>
           </Fragment>
         ))}
+        <button
+          type="button"
+          onClick={() => handleProjectAddFields()}
+        >
+          Add Section
+        </button>
       </div>
       <br/>
+
       <h2>Awards/Achievements</h2>
       <div>
         {achieveInputFields.map((inputField, index) => (
@@ -482,20 +491,19 @@ function Form(){
             <div>
               <button
                 type="button"
-                disabled={achieveInputFields.length === 1}
                 onClick={() => handleAchieveRemoveFields(index)}
               >
-                -
-              </button>
-              <button
-                type="button"
-                onClick={() => handleAchieveAddFields()}
-              >
-                +
+                Remove Section
               </button>
             </div>
           </Fragment>
         ))}
+        <button
+          type="button"
+          onClick={() => handleAchieveAddFields()}
+        >
+          Add Section
+        </button>
       </div>
       <input type="submit"/>
     </form>
