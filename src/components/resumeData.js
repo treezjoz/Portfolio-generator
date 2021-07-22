@@ -2,8 +2,7 @@
 let resumeData = {
     "firstName":"Treesa",
     "lastName":" Jose",
-    "role1": "Frontend Developer",
-    "role2":"Designer",
+    "roles": "Frontend Developer,Designer",
     "roleDescription": "I like dabbling in various parts of frontend development and like to learn about new technologies or simply watch movies/series in my free time.",
     "aboutme":"I am currently a pre-final year student at Mar Athanasius College Of Engineering Kothamangalam and pursuing my B.Tech from here. I am a self taught Web Developer. ",
     "photo":"images/xabout.jpg",
