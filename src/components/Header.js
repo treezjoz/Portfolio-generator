@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Header(props){
-  const roles=[props.resumeData.role1+".",props.resumeData.role2+"."];
+  const roles=props.resumeData.roles(',');
   const handleThemeChange = theme => {
     const style = document.createElement("link");
     style.href = "css/style"+theme+".css";
