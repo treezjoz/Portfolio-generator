@@ -2,21 +2,9 @@ import React from 'react';
 
 export default function Header(props){
   const roles=props.resumeData.roles.split(',');
-
-  let switches = document.getElementsByClassName('switch');
   let style = sessionStorage.getItem('style');
 
-  if (style === null) { setTheme('blue'); }
-  else { setTheme(style); }
-
-  for (let i of switches) {
-    i.addEventListener('click', function () {
-      let theme = this.dataset.theme;
-      console.log(theme);
-      setTheme(theme);
-  });}
-
-  function setTheme(theme) {
+  const setTheme = (theme) => {
   if (theme === 'blue') {
     document.getElementById('switcher-id').href = './css/blue.css';
   } else if (theme === 'green') {
@@ -27,7 +15,10 @@ export default function Header(props){
     document.getElementById('switcher-id').href = './css/pink.css';
   }
   sessionStorage.setItem('style', theme);
-  }
+};
+
+  if (style === null) { setTheme('blue'); }
+  else { setTheme(style); }
 
   return(
     <div id="home-section">
@@ -46,10 +37,10 @@ export default function Header(props){
             <li className="nav-item"><a href="#connect-section" className="nav-link"><span>Contact</span></a></li>
             <li>
             <div className="theme-switches">
-              <button className="switch" id="switch-1" data-theme="blue"></button>
-              <button className="switch" id="switch-2" data-theme="green"></button>
-              <button className="switch" id="switch-3" data-theme="red"></button>
-              <button className="switch" id="switch-4" data-theme="pink"></button>
+              <button className="switch" id="switch-1" data-theme="blue" onClick={() => setTheme('blue')}></button>
+              <button className="switch" id="switch-2" data-theme="green" onClick={() => setTheme('green')}></button>
+              <button className="switch" id="switch-3" data-theme="red" onClick={() => setTheme('red')}></button>
+              <button className="switch" id="switch-4" data-theme="pink" onClick={() => setTheme('pink')}></button>
             </div>
             </li>
           </ul>
