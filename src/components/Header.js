@@ -17,13 +17,13 @@ export default function Header(props){
   });}
 
   function setTheme(theme) {
-  if (theme == 'blue') {
+  if (theme === 'blue') {
     document.getElementById('switcher-id').href = './css/blue.css';
-  } else if (theme == 'green') {
+  } else if (theme === 'green') {
     document.getElementById('switcher-id').href = './css/green.css';
-  } else if (theme == 'red') {
+  } else if (theme === 'red') {
     document.getElementById('switcher-id').href = './css/red.css';
-  } else if (theme == 'pink') {
+  } else if (theme === 'pink') {
     document.getElementById('switcher-id').href = './css/pink.css';
   }
   localStorage.setItem('style', theme);
