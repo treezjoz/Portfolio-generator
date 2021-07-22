@@ -24,7 +24,7 @@ export default function Resume(props){
                   return(
                     <div className="resume-wrap d-flex ">
                       <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-ideas"></span>
+                        <span><i class='fa fa-graduation-cap'></i></span>
                       </div>
                       <div className="text pl-3">
                         <span className="date">{item.TermOfStudy}</span>
@@ -45,7 +45,7 @@ export default function Resume(props){
                   return(
                     <div className="resume-wrap d-flex ">
                       <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-ideas"></span>
+                        <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
                       </div>
                       <div className="text pl-3">
                         <span className="date">{item.Term}</span>
@@ -88,7 +88,7 @@ export default function Resume(props){
                       return(
                         <div className="resume-wrap d-flex ">
                           <div className="icon d-flex align-items-center justify-content-center">
-                            <span className="flaticon-ideas"></span>
+                            <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
                           </div>
                           <div className="text pl-3">
                             <span className="date">{item.year}</span>
