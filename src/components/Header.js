@@ -1,8 +1,6 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
 
 export default function Header(props){
-  const history = useHistory();
   const roles=props.resumeData.roles.split(',');
   let style = sessionStorage.getItem('style');
 
@@ -21,10 +19,6 @@ export default function Header(props){
 
   if (style === null) { setTheme('blue'); }
   else { setTheme(style); }
-
-  const goHome = () => {
-      history.push('/');
-  };
 
   return(
     <div id="home-section">
