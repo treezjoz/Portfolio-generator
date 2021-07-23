@@ -1,6 +1,8 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 export default function Header(props){
+  const history = useHistory();
   const roles=props.resumeData.roles.split(',');
   let style = sessionStorage.getItem('style');
 
@@ -20,11 +22,15 @@ export default function Header(props){
   if (style === null) { setTheme('blue'); }
   else { setTheme(style); }
 
+  const goHome = () => {
+      history.push('/');
+  };
+
   return(
     <div id="home-section">
     <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
       <div className="container">
-        <a className="navbar-brand" href="index.html"><span>{props.resumeData.firstName[0]}</span>{props.resumeData.firstName.slice(1)}</a>
+        <a className="navbar-brand" href="/portfolio"><span>{props.resumeData.firstName[0]}</span>{props.resumeData.firstName.slice(1)}</a>
         <button className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i> Menu
         </button>
